@@ -12,6 +12,15 @@ class Game extends Component {
         status: null,
     }
 
+    squareClickHandler = (row, col) => {
+        if (this.state.status) {
+            return;
+        }
+        const history = this.state.history.slice(0, this.state.nextStep+1);
+        const current = history[history.length - 1];
+        
+    }
+
     render () {
         const history = this.state.history;
 
