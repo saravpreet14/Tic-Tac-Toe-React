@@ -50,12 +50,10 @@ class Game extends Component {
             history: history.concat([{board: current}]),
             stepNumber: history.length,
             nextStep: this.state.nextStep === 'O' ? 'X' : 'O',
-            stepNumber: this.state.stepNumber+1
         });
     }
 
     jumpTo(step) {
-        console.log(step);
         this.setState({
             stepNumber: step,
             nextStep: (step % 2) === 0 ? 'O' : 'X'
@@ -67,7 +65,7 @@ class Game extends Component {
         const current = history[this.state.stepNumber];
         const winner = this.calculateWinner(current.board);
 
-        let statusText = 'Turn: ' + (this.state.stepNumber%2 == 0 ? 'O' : 'X');
+        let statusText = 'Turn: ' + (this.state.stepNumber%2 === 0 ? 'O' : 'X');
         if(winner) {
             statusText = 'Winner: ' + winner;
         }

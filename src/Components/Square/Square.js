@@ -21,7 +21,7 @@ const Square = (props) => {
 
     let image = null;
     if(link) {
-        image = (<img src={link} />);
+        image = (<img src={link} alt={props.value} />);
     }
 
     return (
