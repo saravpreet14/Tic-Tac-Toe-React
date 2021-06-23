@@ -14,6 +14,7 @@ const Board = (props) => {
                 key={"" + i + j} 
                 row={i}
                 col={j}
+                click={() => props.click(i, j)}
             />);
       }
     }
